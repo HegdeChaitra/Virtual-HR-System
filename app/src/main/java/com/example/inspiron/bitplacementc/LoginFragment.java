@@ -2,6 +2,7 @@ package com.example.inspiron.bitplacementc;
 
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -125,12 +126,13 @@ private void loginProcess(String email, String paswd){
                 editor.putString(Constants.UNIQUE_ID,resp.getUser().getUnique_id());
                 editor.apply();
                 Snackbar.make(getView(), "Logged in", Snackbar.LENGTH_LONG).show();
-
-                //goToProfile();
+                goToProfile();
 
             }
             progress.setVisibility(View.INVISIBLE);
+
         }
+
 
         @Override
         public void onFailure(Call<ServerResponse> call, Throwable t) {
@@ -138,12 +140,17 @@ private void loginProcess(String email, String paswd){
             progress.setVisibility(View.INVISIBLE);
             Log.d(Constants.TAG,"failed");
             Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+            goToProfile();
 
         }
     });
+
 }
 
 
+    private void goToProfile() {
+        startActivity(new Intent(LoginFragment.this.getActivity(), Home.class));
+    }
 
 
     private void goToRegister(){

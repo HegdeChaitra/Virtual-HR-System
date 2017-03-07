@@ -1,6 +1,7 @@
 package com.example.inspiron.bitplacementc;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Handler;
@@ -24,7 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener,RegisterComapnyFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener,CalenderFragment.OnFragmentInteractionListener,StatFragment.OnFragmentInteractionListener {
 
 
     private NavigationView navigationView;
@@ -42,10 +43,10 @@ public class Home extends AppCompatActivity {
     public static int navItemIndex=0;
 
     private static final String TAG_HOME="home";
-    private static final String TAG_PHOTOS="photos";
-    private static final String TAG_MOVIES="movies";
+    private static final String TAG_PHOTOS="calender";
+    private static final String TAG_MOVIES="register";
     private static final String TAG_NOTIFICATION="notification";
-    private static final String TAG_SETTING="setting";
+    private static final String TAG_SETTING="statistics";
     private static String CURRENT_TAG=TAG_HOME;
 
     private String[] activityTitles;
@@ -148,12 +149,12 @@ public class Home extends AppCompatActivity {
             case 0:HomeFragment homeFragment = new HomeFragment();
                 return homeFragment;
             case 1:
-                // photos
-                PhotosFragment photosFragment = new PhotosFragment();
+                // calender
+                CalenderFragment photosFragment = new CalenderFragment();
                 return photosFragment;
             case 2:
-                // movies fragment
-                MoviesFragment moviesFragment = new MoviesFragment();
+                // registration fragment
+                RegisterComapnyFragment moviesFragment = new RegisterComapnyFragment();
                 return moviesFragment;
             case 3:
                 // notifications fragment
@@ -161,8 +162,8 @@ public class Home extends AppCompatActivity {
                 return notificationsFragment;
 
             case 4:
-                // settings fragment
-                SettingsFragment settingsFragment = new SettingsFragment();
+                // statistics fragment
+                StatFragment settingsFragment = new StatFragment();
                 return settingsFragment;
             default:
                 return new HomeFragment();
@@ -264,21 +265,14 @@ public class Home extends AppCompatActivity {
     }
 
     private void loadNavHeader() {
-        txtName.setText("BIT_STUDENT");
+        txtName.setText("Name");
         txtWebsite.setText("abc");
-
+        //background image of header
         Glide.with(this).load(urlNavHeaderBg)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imgNavHeaderBg);
 
-        // Loading profile image
-        Glide.with(this).load(urlProfileImg)
-                .crossFade()
-                .thumbnail(0.5f)
-                .bitmapTransform(new CircleTransform(this))
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgProfile);
 
      navigationView.getMenu().getItem(3).setActionView(R.layout.menu_dot);
 
@@ -339,4 +333,8 @@ public class Home extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

@@ -20,10 +20,10 @@
 
     <string-array name="nav_item_activity_titles">
         <item>Home</item>
-        <item>Photos</item>
-        <item>Movies</item>
+        <item>Calender</item>
+        <item>Register</item>
         <item>Notifications</item>
-        <item>Settings</item>
+        <item>Statistics</item>
     </string-array>
 
     <string name="activity_title_about_us">About Us</string>
