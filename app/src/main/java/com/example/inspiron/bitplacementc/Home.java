@@ -25,7 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-public class Home extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener,RegisterComapnyFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener,CalenderFragment.OnFragmentInteractionListener,StatFragment.OnFragmentInteractionListener {
+public class Home extends AppCompatActivity implements RegisterComapnyFragment.OnFragmentInteractionListener,CalenderFragment.OnFragmentInteractionListener,StatFragment.OnFragmentInteractionListener {
 
 
     private NavigationView navigationView;
@@ -158,7 +158,7 @@ public class Home extends AppCompatActivity implements HomeFragment.OnFragmentIn
                 return moviesFragment;
             case 3:
                 // notifications fragment
-                NotificationsFragment notificationsFragment = new NotificationsFragment();
+                NotificationFragment notificationsFragment = new NotificationFragment();
                 return notificationsFragment;
 
             case 4:
