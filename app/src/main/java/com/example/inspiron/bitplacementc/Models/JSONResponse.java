@@ -4,12 +4,10 @@ package com.example.inspiron.bitplacementc.Models;
  * Created by Inspiron on 3/10/2017.
  */
 
-public class ServerPostResponse {
+public class JSONResponse {
+    private AndroidVersion[] android;
 
-    private UserPost[] android;
-
-    public UserPost[] getAndroid() {
+    public AndroidVersion[] getAndroid() {
         return android;
     }
-
 }

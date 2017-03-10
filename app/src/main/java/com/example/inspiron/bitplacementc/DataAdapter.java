@@ -10,14 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.inspiron.bitplacementc.Models.UserPost;
+import com.example.inspiron.bitplacementc.Models.AndroidVersion;
 
 import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
-    private ArrayList<UserPost> android;
+    private ArrayList<AndroidVersion> android;
 
-    public DataAdapter(ArrayList<UserPost> android) {
+    public DataAdapter(ArrayList<AndroidVersion> android) {
         this.android = android;
     }
 

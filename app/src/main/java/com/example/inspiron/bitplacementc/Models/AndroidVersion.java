@@ -4,7 +4,7 @@ package com.example.inspiron.bitplacementc.Models;
  * Created by Inspiron on 3/10/2017.
  */
 
-public class UserPost {
+public class AndroidVersion {
     private String ver;
     private String name;
     private String api;
@@ -20,5 +20,4 @@ public class UserPost {
     public String getApi() {
         return api;
     }
-
 }

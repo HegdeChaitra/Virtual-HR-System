@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.inspiron.bitplacementc.Models.ServerPostResponse;
-import com.example.inspiron.bitplacementc.Models.UserPost;
+import com.example.inspiron.bitplacementc.Models.AndroidVersion;
+import com.example.inspiron.bitplacementc.Models.JSONResponse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
-    private ArrayList<UserPost> data;
+    private ArrayList<AndroidVersion> data;
     private DataAdapter adapter;
 
     public HomeFragment() {
@@ -38,78 +38,54 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://api.learn2crack.com")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        PostInterface request = retrofit.create(PostInterface.class);
-        Call<ServerPostResponse> call = request.getJSON();
-        call.enqueue(new Callback<ServerPostResponse>() {
-            @Override
-            public void onResponse(Call<ServerPostResponse> call, Response<ServerPostResponse> response) {
+        loadJSON();
 
-                ServerPostResponse jsonResponse = response.body();
-                data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-            }
-
-            @Override
-            public void onFailure(Call<ServerPostResponse> call, Throwable t) {
-                Log.d("Error",t.getMessage());
-            }
-        });
     }
+/*public void anewmenthod(){
+    Handler h=new Handler();
+}
+*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_home, container, false);
+
         recyclerView = (RecyclerView)rootview.findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-  //      loadJSON();
-        adapter = new DataAdapter(data);
-        recyclerView.setAdapter(adapter);
-
 
         return rootview;
     }
 
-
-
-
-
-/*    void initializeRecyclerView() {
-//        recyclerView = (RecyclerView) rootview.findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new SampleAdapter(getActivity()));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
-    }
-*/
-/*    private void loadJSON() {
+    private void loadJSON() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.learn2crack.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         PostInterface request = retrofit.create(PostInterface.class);
-        Call<ServerPostResponse> call = request.getJSON();
-        call.enqueue(new Callback<ServerPostResponse>() {
+        Call<JSONResponse> call = request.getJSON();
+        call.enqueue(new Callback<JSONResponse>() {
             @Override
-            public void onResponse(Call<ServerPostResponse> call, Response<ServerPostResponse> response) {
+            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
 
-                ServerPostResponse jsonResponse = response.body();
+                JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapter = new DataAdapter(data);
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<ServerPostResponse> call, Throwable t) {
+            public void onFailure(Call<JSONResponse> call, Throwable t) {
                 Log.d("Error",t.getMessage());
             }
         });
     }
-*/
+
 }
+
+
+
 
