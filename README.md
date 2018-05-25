@@ -6,7 +6,7 @@ Some screenshots of the Mobile Application
 
 ![Alt text](Screenshot_2017-04-03-14-53-32.png?raw=true "Title")
 
-FIG : Registering to the service
+<h2>FIG : Registering to the service</h2>
 
 ![Alt text](Screenshot_2017-04-03-14-53-36.png?raw=true "Title")
 
