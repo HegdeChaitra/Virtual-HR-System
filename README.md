@@ -1,7 +1,7 @@
 # BIT-Placement
 Android application for BIT Placement office
 
-Some screenshots of the Mobile Application
+See below for some screenshots of the Mobile Application:
 
 
 ![Alt text](Screenshot_2017-04-03-14-53-32.png?raw=true "Title")
