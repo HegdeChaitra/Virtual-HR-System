@@ -1,9 +1,9 @@
 # BIT-Placement
-Android application for BIT Placement office: user friendly, interactive Android application from scratch to help recruitment wing of the undergrad college.
+- Android application for BIT Placement office: user friendly, interactive Android application from scratch to help recruitment wing of the undergrad college.
 
-• Tackled the cold-start problem of prediction by representing each of the student and company’s requirement as a vector of values based on the information provided during signing into the service. Cosine similarity and Jacquard similarity were used to compute the probability that a student would get placed in each of the companies
+- Tackled the cold-start problem of prediction by representing each of the student and company’s requirement as a vector of values based on the information provided during signing into the service. Cosine similarity and Jacquard similarity were used to compute the probability that a student would get placed in each of the companies
 
-See below for some screenshots of the Mobile Application:
+### See below for some screenshots of the Mobile Application:
 
 
 ![Alt text](Screenshot_2017-04-03-14-53-32.png?raw=true "Title")
