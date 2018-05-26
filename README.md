@@ -5,9 +5,7 @@
 
 ### See below for some screenshots of the Mobile Application:
 
-
-![Alt text](Screenshot_2017-04-03-14-53-32.png?=250x250raw=true "Title")
-
+<img src = "Screenshot_2017-04-03-14-53-32.png"/>
 <h1>FIG : Registering to the service</h1>
 
 ![Alt text](Screenshot_2017-04-03-14-53-36.png?raw=true "Title")
