@@ -1,4 +1,4 @@
-# BIT-Placement
+# Virtual HR System : BIT-Placement-App
 - Android application for BIT Placement office: user friendly, interactive Android application from scratch to help recruitment wing of the undergrad college.
 
 - Tackled the cold-start problem of prediction by representing each of the student and company’s requirement as a vector of values based on the information provided during signing into the service. Cosine similarity and Jacquard similarity were used to compute the probability that a student would get placed in each of the companies
