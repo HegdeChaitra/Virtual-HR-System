@@ -8,6 +8,7 @@
 <h1> Registering to the service</h1>
 <img src = "Screenshot_2017-04-03-14-53-32.png" width="300" height="500"/>
 
+
 <img src = "Screenshot_2017-04-03-14-53-36.png" width="300" height="500"/>
 
 <h1>Logging into the service </h1>
